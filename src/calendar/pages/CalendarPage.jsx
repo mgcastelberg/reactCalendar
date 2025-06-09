@@ -1,6 +1,10 @@
+import { Navbarx } from "../components/Navbarx"
 
 export const CalendarPage = () => {
   return (
-    <div>CalendarPage</div>
+    <>
+      <Navbarx />
+      <div>CalendarPage</div>
+    </>
   )
 }
