@@ -1,10 +1,9 @@
 import { Calendar } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
-
-import { Navbarx } from "../components/Navbarx"
 import { addHours, addDays } from 'date-fns'
 import { getMessagesES, localizer } from '../../helpers'
+import { Navbarx , CalendarEvent } from '../'
 
 const events = [
   {
@@ -27,13 +26,17 @@ const events = [
       beforeStart: true,
       afterEnd: true,
     },
+    user: {
+      _id: '123',
+      name: 'Fernando'
+    }
   },
 ]
 
 export const CalendarPage = () => {
 
   const eventStyleGetter = (event, start, end, isSelected) =>{
-    console.log({event, start, end, isSelected});
+    // console.log({event, start, end, isSelected});
     const style = {
       backgroundColor: '#367CF7',
       borderRadius: '7px',
@@ -57,6 +60,9 @@ export const CalendarPage = () => {
       style={{ height: 'calc(100vh - 80px)' }}
       messages={getMessagesES()}
       eventPropGetter={eventStyleGetter}
+      components={{
+        event: CalendarEvent
+      }}
     />
     </>
   )
