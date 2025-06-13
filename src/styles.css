@@ -34,7 +34,28 @@
     color: rgb(51, 51, 51);
     display: inline;
     max-height: 620px;
-    max-width: 500px;
+    
+    max-width: 600px;
     outline: none;
     padding: 10px;
+}
+.ReactModal__Content {
+    min-width: 300px;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+@media screen and (min-width: 400px) {
+    .ReactModal__Content {
+        min-width: 400px !important;
+    }
+    
+}
+@media screen and (min-width: 500px) {
+    .ReactModal__Content {
+        min-width: 500px !important;
+    }
+    
 }
