@@ -2,9 +2,8 @@ import { useState } from 'react'
 import { Calendar } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
-import { addHours, addDays, set } from 'date-fns'
 import { getMessagesES, localizer } from '../../helpers'
-import { Navbarx , CalendarEvent, CalendarModal } from '../'
+import { Navbarx , CalendarEvent, CalendarModal, FabAddNew } from '../'
 import { useCalendarStore, useUiStore } from '../../hooks'
 
 // const events = [
@@ -81,24 +80,24 @@ export const CalendarPage = () => {
     <>
       <Navbarx />
       <Calendar
-      culture='es'
-      localizer={localizer}
-      events={parsedEvents}
-      defaultView={lastView}
-      startAccessor="start"
-      endAccessor="end"
-      style={{ height: 'calc(100vh - 80px)' }}
-      messages={getMessagesES()}
-      eventPropGetter={eventStyleGetter}
-      components={{
-        event: CalendarEvent
-      }}
-      onDoubleClickEvent={onDoubleClick}
-      onSelectEvent={onSelect}
-      onView={onViewChange}
-    />
-    <CalendarModal />                                                                                                             
-
-    </>
+        culture='es'
+        localizer={localizer}
+        events={parsedEvents}
+        defaultView={lastView}
+        startAccessor="start"
+        endAccessor="end"
+        style={{ height: 'calc(100vh - 80px)' }}
+        messages={getMessagesES()}
+        eventPropGetter={eventStyleGetter}
+        components={{
+          event: CalendarEvent
+        }}
+        onDoubleClickEvent={onDoubleClick}
+        onSelectEvent={onSelect}
+        onView={onViewChange}
+      />
+      <CalendarModal />                                                                                                             
+      <FabAddNew />
+    </>  
   )
 }
